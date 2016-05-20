@@ -14,7 +14,7 @@ module.exports.register = function(options, dependencies, next){
     request({
       url: 'http://' + options.host + ':' + port + '/v2/keys/v1/toggles/?recursive=true',
       json: true
-    }, function(err, res, body){
+    }, function(err, body){
       if(!!err || !_.isObject(body)){
         options.errorHandler(err);
       } else {

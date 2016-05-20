@@ -11,7 +11,7 @@ var getTogglePlugin,
 var initialise = function(err, res, done){
 
   getTogglePlugin = injectr('../index.js', {
-    'minimal-request': sinon.stub().yields(err, null, res)
+    'minimal-request': sinon.stub().yields(err, res)
   }, { setTimeout: _.noop, console: console });
 
   errorHandler = sinon.spy();
