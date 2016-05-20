@@ -28,8 +28,7 @@ registry.register({
   register: require('oc-hobknob'),
   options: {
     host: 'hobknob-etcd.hosts.com',
-    port: 4001, // optional, default 4001
-    errorHandler: function(err){ //optional
+    errorHandler: function(err){
       console.log(err);
     }
   }
@@ -61,7 +60,7 @@ module.exports.data = function(context, callback){
 
 ### API
 
-Api for plugin setup:
+####Api for plugin setup:
 
 |parameter|type|mandatory|description|
 |---------|----|---------|-----------|
@@ -69,19 +68,19 @@ Api for plugin setup:
 |port|`number`|no|Default 4001, the etcd port|
 |errorHandler|`function`|no|The error handler|
 
-Api for plugin usage:
+#### Api for plugin usage:
 
 The plugin name is declared when initialising a plugin. Following assumes `getToggle` is the designated name.
 
-#### context.plugins.getToggle(serviceName, toggleName)
+##### context.plugins.getToggle(serviceName, toggleName)
 
 Syncronous function that gets a value for a given Service name and toggle. Default for when hobknob doesn't have the value is `false`.
 
-#### context.plugins.getToggle(serviceName, toggleName, defaultValue)
+##### context.plugins.getToggle(serviceName, toggleName, defaultValue)
 
 Syncronous function that gets a value for a given Service name and toggle. Default for when hobknob doesn't have the value is `false`.
 
-#### context.plugins.getToggle(serviceName, toggleName, secondaryToggleKey, defaultValue)
+##### context.plugins.getToggle(serviceName, toggleName, secondaryToggleKey, defaultValue)
 
 Syncronous function that gets an Hobknob toggle value for a given serviceName and toggleName and secondaryToggleKey using specified default value. 
 
