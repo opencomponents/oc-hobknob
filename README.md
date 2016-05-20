@@ -32,16 +32,13 @@ registry.register({
       console.log(err);
     }
   }
-}, function(err){
+}, function(err){ // called only if initialisation fails
   if(err){
     console.log('plugin initialisation failed:', err);
-  } else {
-    console.log('hobknob now available');
   }
 });
 
 ...
-
 registry.start(callback);
 ```
 
