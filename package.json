@@ -1,6 +1,6 @@
 {
   "name": "oc-hobknob",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OpenComponents Hobknob plugin",
   "main": "index.js",
   "scripts": {
