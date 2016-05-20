@@ -53,7 +53,7 @@ Example for a components' server.js:
 
 module.exports.data = function(context, callback){
   callback(null, {
-    showSomething: context.plugins.getToggle('myApp', 'toggleName', false);
+    showSomething: context.plugins.getToggle('myApp', 'toggleName', false)
   });
 };
 ```
