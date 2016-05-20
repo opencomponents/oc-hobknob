@@ -1,7 +1,7 @@
 'use strict';
 
 var request = require('minimal-request');
-var _ = require('underscore');
+var _ = require('lodash');
 
 var client,
     values;
@@ -21,7 +21,7 @@ module.exports.register = function(options, dependencies, next){
         values = body;
       }
 
-      setTimeout(getUpdatedValues, 30000);
+      setTimeout(getUpdatedValues, options.syncInterval || 30000);
       next();
     });
   };
@@ -46,13 +46,13 @@ module.exports.execute = function(appName, toggleName, secondaryKey, defaultValu
   if(!values || !values.node || !values.node.nodes){ return defaultValue; }
 
   p = values.node.nodes;
-  p = _.findWhere(p, { key: nodeKey });
+  p = _.find(p, { key: nodeKey });
 
   if(!p || !p.nodes){ return defaultValue; }
 
   p = p.nodes;
   nodeKey += '/' + toggleName;
-  p = _.findWhere(p, { key: nodeKey });
+  p = _.find(p, { key: nodeKey });
 
   if(!p || (!!p.dir && !secondaryKey) || (!p.dir && !p.value)){
     return defaultValue;
@@ -62,7 +62,7 @@ module.exports.execute = function(appName, toggleName, secondaryKey, defaultValu
 
   p = p.nodes;
   nodeKey += '/' + secondaryKey;
-  p = _.findWhere(p, { key: nodeKey });
+  p = _.find(p, { key: nodeKey });
 
   if(!p || !p.value){ return defaultValue; }
 

@@ -64,9 +64,10 @@ module.exports.data = function(context, callback){
 
 |parameter|type|mandatory|description|
 |---------|----|---------|-----------|
+|errorHandler|`function`|no|The error handler|
 |host|`string`|yes|The hobknob etcd host|
 |port|`number`|no|Default 4001, the etcd port|
-|errorHandler|`function`|no|The error handler|
+|syncInterval|`number` (ms)|no|Default 30000, time for the internal cache to refresh|
 
 #### Api for plugin usage:
 
