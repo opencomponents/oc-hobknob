@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/opentable/oc-hobknob"
+    "url": "https://github.com/opencomponents/oc-hobknob"
   },
   "keywords": [
     "opencomponents",
@@ -21,9 +21,9 @@
   "author": "Matteo Figus",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/opentable/oc-hobknob/issues"
+    "url": "https://github.com/opencomponents/oc-hobknob/issues"
   },
-  "homepage": "https://github.com/opentable/oc-hobknob",
+  "homepage": "https://github.com/opencomponents/oc-hobknob",
   "dependencies": {
     "lodash": "^4.12.0",
     "minimal-request": "^2.0.0"
