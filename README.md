@@ -1,11 +1,11 @@
-oc-hobknob [![Build Status](https://secure.travis-ci.org/opentable/oc-hobknob.png?branch=master)](http://travis-ci.org/opentable/oc-hobknob)
+oc-hobknob [![Build Status](https://secure.travis-ci.org/opencomponents/oc-hobknob.png?branch=master)](http://travis-ci.org/opencomponents/oc-hobknob)
 ==========
 
 [OpenComponents](https://github.com/opentable/oc) plugin for interacting with [Hobknob](https://github.com/opentable/hobknob) toggles inside OC components.
 
 # Requirements:
 
-* Node version: min: **0.10.40**, recommended: **>=4.2.X**
+* Node version: min: **4**
 * OC registry
 * Hobknob server
 
@@ -21,18 +21,18 @@ More info about integrating OC plugins: [here](https://github.com/opentable/oc/w
 
 ```js
 ...
-var registry = new oc.registry(configuration);
+const registry = oc.registry(configuration);
 
 registry.register({
   name: 'getToggle',
   register: require('oc-hobknob'),
   options: {
     host: 'hobknob-etcd.hosts.com',
-    errorHandler: function(err){
+    errorHandler: (err) => {
       console.log(err);
     }
   }
-}, function(err){
+}, (err) => {
   if(err){
     console.log('plugin initialisation failed:', err);
   } else {
@@ -47,11 +47,11 @@ registry.start(callback);
 
 ### Using it inside components
 
-Example for a components' server.js:
+Example for a component's server.js:
 
 ```js
 
-module.exports.data = function(context, callback){
+module.exports.data = (context, callback) => {
   callback(null, {
     showSomething: context.plugins.getToggle('myApp', 'toggleName', false)
   });
@@ -60,7 +60,7 @@ module.exports.data = function(context, callback){
 
 ### API
 
-####Api for plugin setup:
+#### Api for plugin setup:
 
 |parameter|type|mandatory|description|
 |---------|----|---------|-----------|
