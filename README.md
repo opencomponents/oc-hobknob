@@ -1,6 +1,8 @@
 oc-hobknob [![Build Status](https://secure.travis-ci.org/opencomponents/oc-hobknob.png?branch=master)](http://travis-ci.org/opencomponents/oc-hobknob)
 ==========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/opencomponents/oc-hobknob.svg)](https://greenkeeper.io/)
+
 [OpenComponents](https://github.com/opentable/oc) plugin for interacting with [Hobknob](https://github.com/opentable/hobknob) toggles inside OC components.
 
 # Requirements:
