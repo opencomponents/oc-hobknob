@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "jshint": "jshint index.js test",
-    "test": "npm run jshint && mocha"
+    "test": "npm run jshint && mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,8 @@
   "homepage": "https://github.com/opencomponents/oc-hobknob",
   "dependencies": {
     "lodash": "^4.12.0",
-    "minimal-request": "^3.0.0"
+    "minimal-request": "^3.0.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^4.0.0",
@@ -34,5 +37,6 @@
     "jshint": "^2.9.2",
     "mocha": "^5.0.0",
     "sinon": "^6.0.0"
-  }
+  },
+  "snyk": true
 }
